@@ -1,9 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Set numpy print options for cleaner output
-np.set_printoptions(formatter={'float': lambda x: "{0:0.3f}".format(x)})
-
 def planck_equation(wavelength, temp):
     """
     Calculate the spectral radiance of a black body using Planck's law.
@@ -50,13 +47,13 @@ def plot_planck(spectral_radiance, temp, wavelength_range, save_name='frame.png'
     plt.ylim(0, 7e13)
     plt.title(f'Blackbody Function for T = {temp} K')
     plt.legend()
-    #plt.savefig(save_name)
+    plt.savefig(save_name)
     plt.close()
 
 # Test parameters
 temp_range = np.arange(4500, 7025, 25)
 wavelength_range = np.linspace(100e-9, 2e-6, 1000)  # Range of wavelengths (100 nm to 2 µm)
-save_path = '/Users/kykyelric/Sync/UMD/Classes/ASTR615/ASTR615-Spring-2025/Workspace/Team-3/Lectures/Feb-11/Frames/'
+save_path = '/Users/kykyelric/Sync/Astronomy-Python-Examples/planck_anim/Frames/'
 
 # Loop through temperature range and generate plots
 for i, temp in enumerate(temp_range):
